@@ -222,6 +222,7 @@ services:
       - web_logs:/app/logs
     depends_on:
       - redis
+      #- db
       - rabbit-mq
     restart: unless-stopped
 
@@ -256,6 +257,7 @@ services:
       disable: true
     depends_on:
       - redis
+      #- db
     restart: unless-stopped
 
 
@@ -282,6 +284,7 @@ services:
     depends_on:
       #- rabbitmq
       - rabbit-mq
+      #- db
       - jasmin
     restart: unless-stopped
     healthcheck:

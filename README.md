@@ -11,16 +11,18 @@
 
   ```postgres://postgres:LOCAL_DB_LOZINKA@host.docker.internal:5432/postgres```
 
-   * *(trenutno je ovaj .env fajl slican kao onaj koji je javno dostupan u jasmin-web-panel repou ali cemo kasnije da ga menjamo)*
+   * **(obratiti paznju da je na Linux Fedora ovaj naziv ```host.docker.internal``` validan za pristup lokalnom hostu, ali na drugim sistemima moze da se razlikuje, recimo na Alma Linux koji mi je na VPS ovo ne radi iako je i on baziran kao i Fedora na Red Hat. Za druge distribucije Linuxa, Win i Mac je verovatno takodje drugacije.)**
 
-- U istom dir se klonira ovaj repo, bulk-sms-jasmin, sa dir i fajlovima potrebnim za doker kontejner:
+   * *(trenutno je ovaj .env fajl slican kao onaj koji je javno dostupan u ```jasmin-web-panel``` repou ali cemo kasnije da ga menjamo)*
+
+- U isti osnovi dir se klonira ovaj repo ```bulk-sms-jasmin``` koji sadrzi direktorijume i fajlovime potrebne za doker kontejner:
     ```
     git clone https://github.com/vladanan/bulk-sms-jasmin.git
     ```
-    * nakon kloniranja ako se koristi lokalna db potrebno je izmeniti fajl ```docker-compose.local.db.yml``` tako da se u ```sms_logger``` odeljku izmene podaci u skladu sa pristupnim podacima za lokalnu db:
+    * **ako se koristi lokalna db** nakon kloniranja potrebno je izmeniti fajl ```docker-compose.local.db.yml``` tako da se u ```sms_logger``` odeljku izmene podaci u skladu sa pristupnim podacima za lokalnu db:
 
       ```
-      DB_HOST: ${DB_HOST:-local_db_url}
+      DB_HOST: ${DB_HOST:-local_db_url} # host.docker.internal ili za lokalni OS adekvatan naziv
 
       DB_DATABASE: ${DB_DATABASE:-jasmin} # ovo ostaje isto
       
@@ -31,7 +33,7 @@
       DB_PASS: ${DB_PASS:-local_db_lozinka}
       ```
 
-- Zatim se u taj dir kloniraju i:
+- Zatim se u osnovni direktorijum kloniraju i:
   * jasmin:
     ```
     git clone https://github.com/jookies/jasmin.git
@@ -47,7 +49,7 @@
 
 - nakon toga doker komanda u osnovnom folderu  bi trebalo da obavi sve i da se u dockeru vide aktivni kontejneri:
     * ako se radi sa db u dokeru: ```docker compose up -d```
-    * ako se radi sa lokalnom db: ```docker-compose -f docker-compose.local.db.yml up -d```
+    * ako se radi sa lokalnom db: ```docker compose -f docker-compose.local.db.yml up -d```
 
 ### Testiranje
 
