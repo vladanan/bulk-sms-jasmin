@@ -1,18 +1,26 @@
 # CPaaS
 
-## Uputstvo za probni deploy sa db u dockeru
+## Uputstvo za probni deploy u dockeru
 
 ### Sadrzaj
 
 - Napravi se osnovni dir za projekat npr. ```cpaas```
 - Iskopira se u njega .env fajl
-   
+  * ako se radi sa db u dokeru onda ostaje kakav jeste
+  * ako se radi sa lokalnom db onda se u DEVDB_URL i PRODB_URL stavlja connection string za lokalnu db
    *(trenutno je ovaj .env fajl slican kao onaj koji je javno dostupan u jasmin-web-panel repou ali cemo kasnije da ga menjamo)*
-- U njemu se klonira ovaj repo, bulk-sms-jasmin, sa dir i fajlovima potrebnim za doker kontejner:
+- U istom dir se klonira ovaj repo, bulk-sms-jasmin, sa dir i fajlovima potrebnim za doker kontejner:
     ```
     git clone https://github.com/vladanan/bulk-sms-jasmin.git
     ```
-- Zatim se u njemu kloniraju:
+    * nakon kloniranja ako se koristi lokalna db potrebno je izmeniti fajl dockcer-compose.local.db.yml tako da se u ```sms_logger``` odeljku izmene podaci u skladu sa pristupnim podacima za lokalnu db:
+          DB_HOST: ${DB_HOST:-local_db_url}
+          DB_DATABASE: ${DB_DATABASE:-jasmin} # ovo ostaje isto
+          DB_TABLE: ${DB_TABLE:-submit_log} # ovo ostaje isto
+          DB_USER: ${DB_USER:-local_db_user}
+          DB_PASS: ${DB_PASS:-local_db_lozinka}
+
+- Zatim se u taj dir kloniraju i:
   * jasmin:
     ```
     git clone https://github.com/jookies/jasmin.git
@@ -26,7 +34,9 @@
 
 ### Aktivacija
 
-- nakon toga u osnovnom folderu ```docker compose up -d``` bi trebalo da obavi sve i da se u dockeru vide aktivni kontejneri
+- nakon toga doker komanda u osnovnom folderu  bi trebalo da obavi sve i da se u dockeru vide aktivni kontejneri:
+    * ako se radi sa db u dokeru: ```docker compose up -d```
+    * ako se radi sa lokalnom db: ```docker-compose -f dockcer-compose.local.db.yml up -d```
 
 ### Testiranje
 
