@@ -14,7 +14,8 @@
     git clone https://github.com/vladanan/bulk-sms-jasmin.git
     ```
     * nakon kloniranja ako se koristi lokalna db potrebno je izmeniti fajl dockcer-compose.local.db.yml tako da se u ```sms_logger``` odeljku izmene podaci u skladu sa pristupnim podacima za lokalnu db:
-          ```DB_HOST: ${DB_HOST:-local_db_url}
+          ```
+          DB_HOST: ${DB_HOST:-local_db_url}
 
           DB_DATABASE: ${DB_DATABASE:-jasmin} # ovo ostaje isto
           
@@ -22,7 +23,8 @@
           
           DB_USER: ${DB_USER:-local_db_user}
           
-          DB_PASS: ${DB_PASS:-local_db_lozinka}```
+          DB_PASS: ${DB_PASS:-local_db_lozinka}
+          ```
 
 - Zatim se u taj dir kloniraju i:
   * jasmin:
