@@ -15,7 +15,7 @@
 
    * *(trenutno je ovaj .env fajl slican kao onaj koji je javno dostupan u ```jasmin-web-panel``` repou ali cemo kasnije da ga menjamo)*
 
-- U isti osnovi dir se klonira ovaj repo ```bulk-sms-jasmin``` koji sadrzi direktorijume i fajlovime potrebne za doker kontejner:
+- U isti osnovi dir se klonira ovaj repo ```bulk-sms-jasmin``` koji sadrzi direktorijume i fajlove potrebne za doker kontejner:
     ```
     git clone https://github.com/vladanan/bulk-sms-jasmin.git
     ```
