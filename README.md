@@ -9,7 +9,7 @@
   * ako se radi sa db u dokeru onda ostaje kakav jeste
   * ako se radi sa lokalnom db onda se u ```DEVDB_URL``` i ```PRODB_URL``` stavlja connection string za lokalnu db ali tako da se umesto ```localhost``` ili ```127.0.0.1``` upise ```host.docker.internal``` npr.:
 
-  ```postgres://postgres:LOCAL_DB_LOZINKA@host.docker.internal:5432/postgres```
+  ```postgres://postgres:LOCAL_DB_LOZINKA@host.docker.internal:5432/jasmin```
 
    * **(obratiti paznju da je na Linux Fedora ovaj naziv ```host.docker.internal``` validan za pristup lokalnom hostu, ali na drugim sistemima moze da se razlikuje, recimo na Alma Linux koji mi je na VPS ovo ne radi iako je i on baziran kao i Fedora na Red Hat. Za druge distribucije Linuxa, Win i Mac je verovatno takodje drugacije.)**
 
