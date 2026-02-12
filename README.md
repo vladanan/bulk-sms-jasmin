@@ -7,8 +7,9 @@
 - Napravi se osnovni dir za projekat npr. ```cpaas```
 - Iskopira se u njega .env fajl
   * ako se radi sa db u dokeru onda ostaje kakav jeste
-  * ako se radi sa lokalnom db onda se u DEVDB_URL i PRODB_URL stavlja connection string za lokalnu db
+  * ako se radi sa lokalnom db onda se u ```DEVDB_URL``` i ```PRODB_URL``` stavlja connection string za lokalnu db ali tako da se umesto ```localhost``` ili ```127.0.0.1``` upise ```host.docker.internal``` npr.: postgres://postgres:LOCAL_DB_LOZINKA@host.docker.internal:5432/postgres
    *(trenutno je ovaj .env fajl slican kao onaj koji je javno dostupan u jasmin-web-panel repou ali cemo kasnije da ga menjamo)*
+
 - U istom dir se klonira ovaj repo, bulk-sms-jasmin, sa dir i fajlovima potrebnim za doker kontejner:
     ```
     git clone https://github.com/vladanan/bulk-sms-jasmin.git
