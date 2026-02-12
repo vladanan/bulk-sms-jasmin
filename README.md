@@ -100,6 +100,6 @@
     ```
     http://localhost:8999/
     ```
-  * user: ```admin```, pass: ```secret```
+  * user: ```admin``` ili ``miki``, pass: ```secret```
 
 
