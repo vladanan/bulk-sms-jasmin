@@ -5,16 +5,17 @@
 ### Sadrzaj
 
 - Napravi se osnovni dir za projekat npr. ```cpaas```
-- U njega se klonira ovaj repo, bulk-sms-jasmin, sa dir i fajlovima potrebnim za doker kontejner:
+- Iskopira se u njega .env fajl
+- U njemu se klonira ovaj repo, bulk-sms-jasmin, sa dir i fajlovima potrebnim za doker kontejner:
     ```
     git clone https://github.com/vladanan/bulk-sms-jasmin.git
     ```
-- Zatim se u njega kloniraju:
+- Zatim se u njemu kloniraju:
   * jasmin:
     ```
     git clone https://github.com/jookies/jasmin.git
     ```
-  * i jasmin-web-panel:
+  * jasmin-web-panel:
     ```
     git clone https://github.com/101t/jasmin-web-panel.git
     ```
