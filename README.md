@@ -13,7 +13,7 @@
     ```
     git clone https://github.com/vladanan/bulk-sms-jasmin.git
     ```
-    * nakon kloniranja ako se koristi lokalna db potrebno je izmeniti fajl dockcer-compose.local.db.yml tako da se u ```sms_logger``` odeljku izmene podaci u skladu sa pristupnim podacima za lokalnu db:
+    * nakon kloniranja ako se koristi lokalna db potrebno je izmeniti fajl ```docker-compose.local.db.yml``` tako da se u ```sms_logger``` odeljku izmene podaci u skladu sa pristupnim podacima za lokalnu db:
 
       ```
       DB_HOST: ${DB_HOST:-local_db_url}
@@ -43,7 +43,7 @@
 
 - nakon toga doker komanda u osnovnom folderu  bi trebalo da obavi sve i da se u dockeru vide aktivni kontejneri:
     * ako se radi sa db u dokeru: ```docker compose up -d```
-    * ako se radi sa lokalnom db: ```docker-compose -f dockcer-compose.local.db.yml up -d```
+    * ako se radi sa lokalnom db: ```docker-compose -f docker-compose.local.db.yml up -d```
 
 ### Testiranje
 
