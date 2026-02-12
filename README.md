@@ -7,7 +7,7 @@
 - Napravi se osnovni dir za projekat npr. ```cpaas```
 - Iskopira se u njega .env fajl
    
-   *(trenutno je .env isti kao onaj koji je javno dostupan u jasmin-web-panel repou ali cemo kasnije da ga menjamo)*
+   *(trenutno je ovaj .env fajl slican kao onaj koji je javno dostupan u jasmin-web-panel repou ali cemo kasnije da ga menjamo)*
 - U njemu se klonira ovaj repo, bulk-sms-jasmin, sa dir i fajlovima potrebnim za doker kontejner:
     ```
     git clone https://github.com/vladanan/bulk-sms-jasmin.git
