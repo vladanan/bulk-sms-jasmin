@@ -50,12 +50,14 @@
 
 - nakon toga doker komanda u osnovnom folderu  bi trebalo da obavi sve i da se u dockeru vide aktivni kontejneri:
     * ako se radi sa db u dokeru:
-
-    ```docker compose up -d```
+    ```
+    docker compose up -d
+    ```
 
     * ako se radi sa lokalnom db:
-
-    ```docker compose -f docker-compose.local.db.yml up -d```
+    ```
+    docker compose -f docker-compose.local.db.yml up -d
+    ```
 
 
 ### Testiranje
@@ -67,7 +69,6 @@
     curl --location 'http://127.0.0.1:8080/ping' --header 'Content-Type: application/json'
     ```
   * odgovor apija:
-
         {
             "data": "Jasmin/PONG"
         }
