@@ -28,7 +28,7 @@
 
   ```postgres://postgres:LOCAL_DB_LOZINKA@host.docker.internal:5432/jasmin```
 
-   * **(obratiti paznju da je na Linux Fedora ovaj naziv ```host.docker.internal``` validan za pristup lokalnom hostu, ali na drugim sistemima moze da se razlikuje, recimo na Alma Linux koji mi je na VPS ovo ne radi iako je i on baziran kao i Fedora na Red Hat. Za druge distribucije Linuxa, Win i Mac je verovatno takodje drugacije.)**
+   * **(obratiti paznju da je na Linux Fedora ovaj naziv ```host.docker.internal``` validan za pristup lokalnom hostu, ali na drugim sistemima moze da se razlikuje, recimo na Alma Linux koji mi je na VPS je ```172.17.0.1```. Za druge distribucije Linuxa, Win i Mac je verovatno takodje drugacije.)**
 
    * *(trenutno je ovaj .env fajl slican kao onaj koji je javno dostupan u ```jasmin-web-panel``` repou ali cemo kasnije da ga menjamo)*
 
@@ -48,8 +48,10 @@
 ### Aktivacija
 
 - nakon toga doker komanda u osnovnom folderu  bi trebalo da obavi sve i da se u dockeru vide aktivni kontejneri:
-    * ako se radi sa db u dokeru: ```docker compose up -d```
-    * ako se radi sa lokalnom db: ```docker compose -f docker-compose.local.db.yml up -d```
+    * ako se radi sa db u dokeru:
+    ```docker compose up -d```
+    * ako se radi sa lokalnom db:
+    ```docker compose -f docker-compose.local.db.yml up -d```
 
 ### Testiranje
 
