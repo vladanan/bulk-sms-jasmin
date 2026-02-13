@@ -5,17 +5,7 @@
 ### Sadrzaj
 
 - Napravi se osnovni dir za projekat npr. ```cpaas```
-- Iskopira se u njega .env fajl
-  * ako se radi sa db u dokeru onda ostaje kakav jeste
-  * ako se radi sa lokalnom db onda se u ```DEVDB_URL``` i ```PRODB_URL``` stavlja connection string za lokalnu db ali tako da se umesto ```localhost``` ili ```127.0.0.1``` upise ```host.docker.internal``` npr.:
-
-  ```postgres://postgres:LOCAL_DB_LOZINKA@host.docker.internal:5432/jasmin```
-
-   * **(obratiti paznju da je na Linux Fedora ovaj naziv ```host.docker.internal``` validan za pristup lokalnom hostu, ali na drugim sistemima moze da se razlikuje, recimo na Alma Linux koji mi je na VPS ovo ne radi iako je i on baziran kao i Fedora na Red Hat. Za druge distribucije Linuxa, Win i Mac je verovatno takodje drugacije.)**
-
-   * *(trenutno je ovaj .env fajl slican kao onaj koji je javno dostupan u ```jasmin-web-panel``` repou ali cemo kasnije da ga menjamo)*
-
-- U isti osnovi dir se klonira ovaj repo ```bulk-sms-jasmin``` koji sadrzi direktorijume i fajlove potrebne za doker kontejner:
+- U njega se klonira ovaj repo ```bulk-sms-jasmin``` koji sadrzi direktorijume i fajlove potrebne za doker kontejner:
     ```
     git clone https://github.com/vladanan/bulk-sms-jasmin.git
     ```
@@ -25,13 +15,23 @@
       DB_HOST: ${DB_HOST:-local_db_url} # host.docker.internal ili za lokalni OS adekvatan naziv
 
       DB_DATABASE: ${DB_DATABASE:-jasmin} # ovo ostaje isto
-      
+
       DB_TABLE: ${DB_TABLE:-submit_log} # ovo ostaje isto
-      
+
       DB_USER: ${DB_USER:-local_db_user}
-      
+
       DB_PASS: ${DB_PASS:-local_db_lozinka}
       ```
+- Zatim se u ```bulk-sms-jasmin``` direktorijum iskopira  .env fajl
+  * ako se radi sa db u dokeru onda ostaje kakav jeste
+  * ako se radi sa lokalnom db onda se u ```DEVDB_URL``` i ```PRODB_URL``` stavlja connection string za lokalnu db ali tako da se umesto ```localhost``` ili ```127.0.0.1``` upise ```host.docker.internal``` npr.:
+
+  ```postgres://postgres:LOCAL_DB_LOZINKA@host.docker.internal:5432/jasmin```
+
+   * **(obratiti paznju da je na Linux Fedora ovaj naziv ```host.docker.internal``` validan za pristup lokalnom hostu, ali na drugim sistemima moze da se razlikuje, recimo na Alma Linux koji mi je na VPS ovo ne radi iako je i on baziran kao i Fedora na Red Hat. Za druge distribucije Linuxa, Win i Mac je verovatno takodje drugacije.)**
+
+   * *(trenutno je ovaj .env fajl slican kao onaj koji je javno dostupan u ```jasmin-web-panel``` repou ali cemo kasnije da ga menjamo)*
+
 
 - Zatim se u ```bulk-sms-jasmin``` direktorijum kloniraju:
   * jasmin:
