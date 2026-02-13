@@ -70,9 +70,9 @@
     ```
   * odgovor apija:
 
-        {
-            "data": "Jasmin/PONG"
-        }
+    {
+        "data": "Jasmin/PONG"
+    }
 
   * balance check:
     ```
