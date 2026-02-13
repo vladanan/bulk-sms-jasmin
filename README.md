@@ -33,7 +33,7 @@
       DB_PASS: ${DB_PASS:-local_db_lozinka}
       ```
 
-- Zatim se u osnovni direktorijum kloniraju i:
+- Zatim se u ```bulk-sms-jasmin``` direktorijum kloniraju:
   * jasmin:
     ```
     git clone https://github.com/jookies/jasmin.git
@@ -60,11 +60,10 @@
     curl --location 'http://127.0.0.1:8080/ping' --header 'Content-Type: application/json'
     ```
   * odgovor apija:
-    ```
-    {
-        "data": "Jasmin/PONG"
-    }
-    ```
+
+        {
+            "data": "Jasmin/PONG"
+        }
 
   * balance check:
     ```
